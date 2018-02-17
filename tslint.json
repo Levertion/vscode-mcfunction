@@ -1,0 +1,11 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "align": false,
+        "no-floating-promises": true
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "autoClosingPairs": [
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "brackets": [],
+    "comments": {
+        "lineComment": "#"
+    },
+    "folding": {
+        "markers": {
+            "start": "^#region.*",
+            "end": "^#endregion"
+        }
+    }
+}
