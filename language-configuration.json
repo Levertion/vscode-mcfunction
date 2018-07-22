@@ -1,22 +1,13 @@
 {
-    "autoClosingPairs": [
-        [
-            "[",
-            "]"
-        ],
-        [
-            "{",
-            "}"
-        ]
-    ],
-    "brackets": [],
-    "comments": {
-        "lineComment": "#"
-    },
-    "folding": {
-        "markers": {
-            "start": "^#region.*",
-            "end": "^#endregion"
-        }
+  "autoClosingPairs": [["[", "]"], ["{", "}"]],
+  "brackets": [],
+  "comments": {
+    "lineComment": "#"
+  },
+  "folding": {
+    "markers": {
+      "start": "^#region.*",
+      "end": "^#endregion"
     }
+  }
 }

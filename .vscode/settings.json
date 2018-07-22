@@ -1,5 +1,5 @@
 {
-    "tslint.autoFixOnSave": true,
-    "editor.formatOnSave": true,
-    "files.insertFinalNewline": true
+  "tslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true
 }
