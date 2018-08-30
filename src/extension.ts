@@ -27,10 +27,11 @@ export function activate(context: ExtensionContext) {
 
   // Options to control the language client
   const clientOptions: LanguageClientOptions = {
-    documentSelector: [{ scheme: "file", language: "mcfunction" }],
-    synchronize: {
-      configurationSection: "mcfunction"
-    }
+    documentSelector: [
+      { scheme: "file", language: "mcfunction" },
+      { scheme: "untitled", language: "mcfunction" }
+    ],
+    synchronize: { configurationSection: "mcfunction" }
   };
 
   const client = new LanguageClient(
