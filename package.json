@@ -23,11 +23,11 @@
     "prettier": "^1.13.7",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.14.0",
-    "typescript": "^2.6.2"
+    "typescript": "^3.0.3"
   },
   "publisher": "Levertion",
   "dependencies": {
-    "vscode": "^1.1.10",
+    "vscode": "^1.1.21",
     "vscode-languageclient": "^3.5.0"
   },
   "activationEvents": [
