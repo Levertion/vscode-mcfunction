@@ -6,7 +6,7 @@
       "request": "attach",
       "name": "Attach to server",
       "port": 25575,
-      "outFiles": ["server/lib/**/*.js"]
+      "sourceMaps": true
     },
     {
       "type": "extensionHost",

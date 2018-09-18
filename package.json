@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "An extension to bring Minecraft Function support to Visual Studio Code",
   "scripts": {
-    "compile": "tsc -p tsconfig.json && tsc -p server/tsconfig.json",
+    "compile": "tsc -p tsconfig.json",
     "lint": "tslint --project . && npm run prettier -- -l",
     "prettier": "prettier **/*.{ts,json}",
-    "postinstall": "vscode-install && cd server && npm install"
+    "postinstall": "vscode-install"
   },
   "repository": {
     "type": "git",
@@ -19,14 +19,15 @@
   "author": "Levertion",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^9.3.0",
-    "prettier": "^1.13.7",
+    "@types/node": "^9.6.31",
+    "prettier": "^1.14.2",
     "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.14.0",
+    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3"
   },
   "publisher": "Levertion",
   "dependencies": {
+    "mcfunction-langserver": "git+https://github.com/Levertion/mcfunction-langserver.git",
     "vscode": "^1.1.21",
     "vscode-languageclient": "^3.5.0"
   },
@@ -97,6 +98,6 @@
     ]
   },
   "engines": {
-    "vscode": "^1.24.0"
+    "vscode": "^1.27.0"
   }
 }

@@ -1,7 +1,8 @@
 "use strict";
-import * as path from "path";
+import { join } from "path";
 import { ExtensionContext, window } from "vscode";
 import {
+  ForkOptions,
   LanguageClient,
   LanguageClientOptions,
   ServerOptions,
@@ -10,9 +11,11 @@ import {
 
 export function activate(context: ExtensionContext) {
   // The main file for the server
-  const serverModule = path.join(__dirname, "..", "server", "out", "index.js");
+  const serverModule = require.resolve("mcfunction-langserver");
   // The debug options for the server. Uses a port in about the Minecraft range
-  const debugOptions = { execArgv: ["--nolazy", "--inspect-brk=25575"] };
+  const debugOptions: ForkOptions = {
+    execArgv: ["--nolazy", "--inspect-brk=25575"]
+  };
 
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
@@ -22,6 +25,7 @@ export function activate(context: ExtensionContext) {
       options: debugOptions,
       transport: TransportKind.ipc
     },
+    options: { cwd: join(__dirname, "..") },
     run: { module: serverModule, transport: TransportKind.ipc }
   };
 
@@ -54,7 +58,7 @@ export function activate(context: ExtensionContext) {
       });
     })
     .catch(() => {
-      // Client startup failed. Possibly impossible?
+      // Client startup failed. This might happen because the ipc connection failed
     });
 
   // Push the disposable to the context's subscriptions so that the
