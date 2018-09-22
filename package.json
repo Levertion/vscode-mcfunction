@@ -19,8 +19,8 @@
   "author": "Levertion",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^9.6.31",
-    "prettier": "^1.14.2",
+    "@types/node": "^9.6.32",
+    "prettier": "^1.14.3",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3"
@@ -28,6 +28,7 @@
   "publisher": "Levertion",
   "dependencies": {
     "mcfunction-langserver": "git+https://github.com/Levertion/mcfunction-langserver.git",
+    "tslib": "^1.9.3",
     "vscode": "^1.1.21",
     "vscode-languageclient": "^3.5.0"
   },

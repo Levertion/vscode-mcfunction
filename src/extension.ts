@@ -14,6 +14,7 @@ export function activate(context: ExtensionContext) {
   const serverModule = require.resolve("mcfunction-langserver");
   // The debug options for the server. Uses a port in about the Minecraft range
   const debugOptions: ForkOptions = {
+    env: { MCFUNCTION_CACHE_DIR: join(__dirname, "..", "cache") },
     execArgv: ["--nolazy", "--inspect-brk=25575"]
   };
 
@@ -25,7 +26,7 @@ export function activate(context: ExtensionContext) {
       options: debugOptions,
       transport: TransportKind.ipc
     },
-    options: { cwd: join(__dirname, "..") },
+    options: { env: { MCFUNCTION_CACHE_DIR: join(__dirname, "..", "cache") } },
     run: { module: serverModule, transport: TransportKind.ipc }
   };
 
