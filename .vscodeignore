@@ -1,0 +1,6 @@
+.vscode
+src
+logs
+.prettierignore
+tsconfig.json
+tslint.json

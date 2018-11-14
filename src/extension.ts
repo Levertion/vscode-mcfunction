@@ -13,8 +13,9 @@ export function activate(context: ExtensionContext) {
   // The main file for the server
   const serverModule = require.resolve("mcfunction-langserver");
   // The debug options for the server. Uses a port in about the Minecraft range
+  const env = { MCFUNCTION_CACHE_DIR: join(__dirname, "..", "cache") };
   const debugOptions: ForkOptions = {
-    env: { MCFUNCTION_CACHE_DIR: join(__dirname, "..", "cache") },
+    env,
     execArgv: ["--nolazy", "--inspect-brk=25575"]
   };
 
@@ -26,8 +27,8 @@ export function activate(context: ExtensionContext) {
       options: debugOptions,
       transport: TransportKind.ipc
     },
-    options: { env: { MCFUNCTION_CACHE_DIR: join(__dirname, "..", "cache") } },
-    run: { module: serverModule, transport: TransportKind.ipc }
+    options: { env },
+    run: { module: serverModule, transport: TransportKind.ipc, options: { env } }
   };
 
   // Options to control the language client
@@ -55,7 +56,6 @@ export function activate(context: ExtensionContext) {
           `Minecraft function loader requested to be shutdown with reason ${reason}`
         );
         client.stop();
-        disposable.dispose();
       });
     })
     .catch(() => {
