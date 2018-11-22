@@ -19,7 +19,7 @@
   "author": "Levertion",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^9.6.37",
+    "@types/node": "^9.6.39",
     "prettier": "^1.15.2",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.16.0",
