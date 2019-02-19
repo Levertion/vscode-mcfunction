@@ -19,17 +19,17 @@
   "author": "Levertion",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^9.6.39",
-    "prettier": "^1.15.2",
-    "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.16.0",
-    "typescript": "^3.1.6"
+    "@types/node": "^9.6.42",
+    "prettier": "^1.16.4",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
   },
   "publisher": "Levertion",
   "dependencies": {
     "mcfunction-langserver": "git+https://github.com/Levertion/mcfunction-langserver.git",
     "tslib": "^1.9.3",
-    "vscode": "^1.1.21",
+    "vscode": "^1.1.29",
     "vscode-languageclient": "^3.5.0"
   },
   "activationEvents": [
@@ -99,6 +99,6 @@
     ]
   },
   "engines": {
-    "vscode": "^1.27.0"
+    "vscode": "^1.29.0"
   }
 }

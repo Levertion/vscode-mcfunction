@@ -28,7 +28,11 @@ export function activate(context: ExtensionContext) {
       transport: TransportKind.ipc
     },
     options: { env },
-    run: { module: serverModule, transport: TransportKind.ipc, options: { env } }
+    run: {
+      module: serverModule,
+      transport: TransportKind.ipc,
+      options: { env }
+    }
   };
 
   // Options to control the language client
