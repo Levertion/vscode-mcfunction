@@ -1,104 +1,105 @@
 {
-  "name": "vscode-mcfunction",
-  "version": "0.0.2",
-  "description": "An extension to bring Minecraft Function support to Visual Studio Code",
-  "scripts": {
-    "compile": "tsc -p tsconfig.json",
-    "lint": "tslint --project . && npm run prettier -- -l",
-    "prettier": "prettier **/*.{ts,json}",
-    "postinstall": "vscode-install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Levertion/vscode-mcfunction/"
-  },
-  "keywords": [
-    "Minecraft",
-    "mcfunction"
-  ],
-  "author": "Levertion",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^9.6.42",
-    "prettier": "^1.16.4",
-    "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.3"
-  },
-  "publisher": "Levertion",
-  "dependencies": {
-    "mcfunction-langserver": "git+https://github.com/Levertion/mcfunction-langserver.git",
-    "tslib": "^1.9.3",
-    "vscode": "^1.1.29",
-    "vscode-languageclient": "^3.5.0"
-  },
-  "activationEvents": [
-    "onLanguage:mcfunction"
-  ],
-  "main": "./lib/extension",
-  "contributes": {
-    "languages": [
-      {
-        "id": "mcfunction",
-        "aliases": [
-          "Minecraft Function"
-        ],
-        "extensions": [
-          "mcfunction"
-        ],
-        "configuration": "./language-configuration.json"
-      }
+    "name": "mcfunction",
+    "version": "0.0.4",
+    "preview": true,
+    "description": "An extension to bring Minecraft Function support to Visual Studio Code",
+    "scripts": {
+        "compile": "tsc -p tsconfig.json",
+        "lint": "tslint --project . && npm run prettier -- -l",
+        "prettier": "prettier **/*.{ts,json}",
+        "postinstall": "vscode-install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Levertion/vscode-mcfunction/"
+    },
+    "keywords": [
+        "Minecraft",
+        "mcfunction"
     ],
-    "configuration": [
-      {
-        "title": "Minecraft Function Settings",
-        "properties": {
-          "mcfunction.trace.internalLogging": {
-            "type": "boolean",
-            "default": false,
-            "scope": "window",
-            "description": "Whether or not to show output from internal logging messages."
-          },
-          "mcfunction.translation.lang": {
-            "type": "string",
-            "default": "en-us",
-            "description": "The code for the language to be used.",
-            "scope": "window"
-          },
-          "mcfunction.data.download": {
-            "type": "boolean",
-            "default": true,
-            "description": "Whether to enable the automatic downloading of a server jar.",
-            "scope": "windows"
-          },
-          "mcfunction.data.enabled": {
-            "type": "boolean",
-            "default": false,
-            "description": "Whether the data collector is enabled. Should only be enabled if an update is released."
-          },
-          "mcfunction.data.customJar": {
-            "type": "string",
-            "default": "",
-            "scope": "window",
-            "description": "Advanced Users Only\nThe path to a custom (server) jar to attempt to extract data from\nNote that not all mod parsers will be supported"
-          },
-          "mcfunction.data.javapath": {
-            "type": "string",
-            "default": "",
-            "scope": "window",
-            "description": "Advanced Users Only\nAn optional custom path to the java executable (`java`/`java.exe`)."
-          },
-          "mcfunction.data.snapshots": {
-            "type": "boolean",
-            "default": true,
-            "scope": "window",
-            "description": "Whether or not to use snapshot versions when collecting data."
-          }
-        }
-      }
-    ]
-  },
-  "engines": {
-    "vscode": "^1.29.0"
-  }
+    "author": "Levertion",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^9.6.48",
+        "prettier": "^1.17.1",
+        "tslint": "^5.16.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.5.1",
+        "vscode": "^1.1.34"
+    },
+    "publisher": "Levertion",
+    "dependencies": {
+        "mcfunction-langserver": "git+https://github.com/Levertion/mcfunction-langserver.git",
+        "tslib": "^1.9.3",
+        "vscode-languageclient": "^3.5.0"
+    },
+    "activationEvents": [
+        "onLanguage:mcfunction"
+    ],
+    "main": "./lib/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "mcfunction",
+                "aliases": [
+                    "Minecraft Function"
+                ],
+                "extensions": [
+                    "mcfunction"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "configuration": [
+            {
+                "title": "Minecraft Function Settings",
+                "properties": {
+                    "mcfunction.trace.internalLogging": {
+                        "type": "boolean",
+                        "default": false,
+                        "scope": "window",
+                        "description": "Whether or not to show output from internal logging messages."
+                    },
+                    "mcfunction.translation.lang": {
+                        "type": "string",
+                        "default": "en-us",
+                        "description": "The code for the language to be used.",
+                        "scope": "window"
+                    },
+                    "mcfunction.data.download": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Whether to enable the automatic downloading of a server jar.",
+                        "scope": "windows"
+                    },
+                    "mcfunction.data.enabled": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Whether the data collector is enabled. Should only be enabled if an update is released."
+                    },
+                    "mcfunction.data.customJar": {
+                        "type": "string",
+                        "default": "",
+                        "scope": "window",
+                        "description": "Advanced Users Only\nThe path to a custom (server) jar to attempt to extract data from\nNote that not all mod parsers will be supported"
+                    },
+                    "mcfunction.data.javapath": {
+                        "type": "string",
+                        "default": "",
+                        "scope": "window",
+                        "description": "Advanced Users Only\nAn optional custom path to the java executable (`java`/`java.exe`)."
+                    },
+                    "mcfunction.data.snapshots": {
+                        "type": "boolean",
+                        "default": true,
+                        "scope": "window",
+                        "description": "Whether or not to use snapshot versions when collecting data."
+                    }
+                }
+            }
+        ]
+    },
+    "engines": {
+        "vscode": "^1.29.0"
+    }
 }
